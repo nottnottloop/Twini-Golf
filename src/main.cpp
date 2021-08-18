@@ -70,6 +70,7 @@ std::vector<Tile> loadTiles(int level)
 	switch(level) 
 	{
 		case 0:
+			temp.reserve(8);
 			temp.push_back(Tile(Vector2f(64*3, 64*3), tileDarkTexture64));
 			temp.push_back(Tile(Vector2f(64*4, 64*3), tileDarkTexture64));
 
@@ -83,14 +84,17 @@ std::vector<Tile> loadTiles(int level)
 			temp.push_back(Tile(Vector2f(64*1 + 64*5, 64*3), tileLightTexture64));
 		break;
 		case 1:
+			temp.reserve(2);
 			temp.push_back(Tile(Vector2f(64*2, 64*3), tileDarkTexture64));
 
 			temp.push_back(Tile(Vector2f(64*4 + 64*5, 64*3), tileLightTexture64));
 		break;
 		case 2:
+			temp.reserve(1);
 			temp.push_back(Tile(Vector2f(32*1 + 32*10 + 16, 32*5), tileLightTexture32));
 		break;
 		case 3:
+			temp.reserve(6);
 			temp.push_back(Tile(Vector2f(32*4, 32*7), tileDarkTexture64));
 			temp.push_back(Tile(Vector2f(32*3, 32*5), tileDarkTexture32));
 			temp.push_back(Tile(Vector2f(32*6, 32*3), tileDarkTexture32));
@@ -100,6 +104,7 @@ std::vector<Tile> loadTiles(int level)
 			temp.push_back(Tile(Vector2f(32*6 + 32*10, 32*9), tileLightTexture32));
 		break;
 		case 4:
+			temp.reserve(15);
 			temp.push_back(Tile(Vector2f(32*3, 32*1), tileDarkTexture32));
 			temp.push_back(Tile(Vector2f(32*1, 32*3), tileDarkTexture32));
 			temp.push_back(Tile(Vector2f(32*5, 32*3), tileDarkTexture32));
@@ -269,7 +274,7 @@ void update()
  		{
         	level++;
 			loadLevel(level);
-    	}
+    }
 	}
 }
 
